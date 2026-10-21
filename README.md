@@ -3,20 +3,31 @@
 
 ## Overview
 
-This repository provides the implementation of a coarse-to-fine 3D human motion prediction framework based on **Transformer and LightGBM**, evaluated on the **Human3.6M** dataset.
+This repository provides the implementation of a coarse-to-fine 3D human motion prediction framework combining **Transformer-based motion forecasting** and **LightGBM-based residual refinement**.
 
-The framework employs a Transformer to capture temporal dependencies and generate coarse motion predictions, followed by LightGBM-based residual refinement to improve prediction accuracy.
+The framework first employs a Transformer to capture temporal dependencies and generate coarse predictions of future 3D human poses. LightGBM is then used to learn and correct prediction residuals, improving the accuracy of short-term human motion prediction.
+
+Experiments are conducted on the **Human3.6M** benchmark dataset.
 
 ## Key Features
 
-- **Transformer-based Prediction:** Models temporal dependencies in human motion sequences to predict future 3D poses.
-- **LightGBM Residual Refinement:** Refines coarse predictions by learning structured prediction residuals.
-- **Human3.6M Benchmark:** Supports model training and evaluation on the Human3.6M dataset.
-- **Short-term Motion Prediction:** Focuses on accurate future human pose prediction over short time horizons.
+- **Transformer-based Motion Prediction:** Captures temporal dependencies in human motion sequences.
+- **LightGBM Residual Refinement:** Improves prediction accuracy through structured residual learning.
+- **Coarse-to-Fine Framework:** Combines deep learning and gradient boosting for accurate motion forecasting.
+- **Human3.6M Benchmark:** Supports training, prediction, and evaluation on the Human3.6M dataset.
+
+## Repository Contents
+
+The repository includes Python scripts for:
+
+- Data preprocessing and loading
+- Transformer model training and prediction
+- LightGBM residual training and refinement
+- Motion prediction and performance evaluation
 
 ## Dataset
 
-Experiments are conducted on the **Human3.6M** dataset, a widely used benchmark for 3D human pose estimation and motion prediction.
+The experiments are conducted on **Human3.6M**, a widely used benchmark for 3D human motion prediction.
 
 The dataset is not included in this repository and must be obtained separately.
 
@@ -27,11 +38,12 @@ The dataset is not included in this repository and must be obtained separately.
 - LightGBM
 - NumPy
 - SciPy
+- Other dependencies required by the implementation
 
-## Usage
+## Acknowledgments
 
-The provided code supports model training and evaluation on Human3.6M. Please configure the dataset paths and relevant parameters according to your local environment.
+Parts of the code in this repository are adapted from the open-source implementation of **AuxFormer**. We sincerely thank the authors of AuxFormer for making their code publicly available and acknowledge their valuable contributions to this research.
 
-## Acknowledgment
+## License
 
-This implementation is provided for academic research and reproducibility in 3D human motion prediction.
+Please respect the licenses and attribution requirements of the original open-source implementations used in this project.
